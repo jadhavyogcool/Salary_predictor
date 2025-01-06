@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salary-prediction1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: salary-prediction1
+  template:
+    metadata:
+      labels:
+        app: salary-prediction1
+    spec:
+      containers:
+      - name: salary-prediction1
+        image: salary-prediction1:latest
+        ports:
+        - containerPort: 5000
